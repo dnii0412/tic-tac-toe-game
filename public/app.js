@@ -23,8 +23,8 @@ const winConditions = {
 let turn0 = true;
 let turn1 = false;
 
-let firstPlayerData = [0, 0, 0, 0, 0];
-let secondPlayerData = [0, 0, 0, 0];
+// let firstPlayerData = [0, 0, 0, 0, 0];
+// let secondPlayerData = [0, 0, 0, 0];
 
 boxes.forEach((box) => {
   box.addEventListener("click", function () {
@@ -32,6 +32,7 @@ boxes.forEach((box) => {
       box.style.backgroundColor = "gray";
       box.textContent = "X";
       turn0 = false;
+
       // check winner func goes up here
     } else {
       box.style.backgroundColor = "white";
@@ -45,13 +46,7 @@ boxes.forEach((box) => {
   });
 });
 
-function disableContent(box) {
-  // boxes. array -> box 1,2,3,4,5...
-  // boxes should not be able to click again if the player has already clicked i
-}
-
-function checkWinner() {}
-
 // 1. how to integrate the winning conditions with the box elements
 // 2. how to check the win conditions after each players actions
 // 3. disable the cards after its clicked. For preventing the overlapping on the buttons
+// how to select the box as element and then disable it
