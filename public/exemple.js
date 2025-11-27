@@ -55,7 +55,7 @@ function checkWinner() {
     const val3 = boxes[c].textContent;
 
     if (val1 === "" || val2 === "" || val3 === "") continue;
-    7;
+
     if (val1 === val2 && val2 === val3) {
       winnerFound = true;
       msg.textContent = `Player ${val1} Wins!`;
