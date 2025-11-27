@@ -18,8 +18,8 @@ let turnX = true; // true = Player X, false = Player O
 let gameActive = true; // to stop clicks after win/draw
 
 // Optional: Track moves (useful if you want stats later)
-let playerXMoves = [];
-let playerOMoves = [];
+// let playerXMoves = [];
+// let playerOMoves = [];
 
 // Main click handler for each box
 boxes.forEach((box, index) => {
@@ -82,10 +82,8 @@ function checkWinner() {
   }
 }
 
-// Reset game (during play)
 reset.addEventListener("click", resetGame);
 
-// New game after win/draw
 newGameBtn.addEventListener("click", resetGame);
 
 function resetGame() {

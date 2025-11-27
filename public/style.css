@@ -61,7 +61,7 @@ h1 {
   cursor: pointer;
   transition: 0.1s linear;
 }
-#reset:hover{
+#reset:hover {
   background-color: var(--soft-green);
   /* color: black; */
   scale: 1.1;
@@ -79,6 +79,7 @@ h1 {
 }
 #msg {
   font-size: 8vmin;
+  display: none;
 }
 .msg-container {
   height: 30vmin;
