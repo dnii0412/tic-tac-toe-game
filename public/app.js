@@ -1,8 +1,8 @@
-const msg = document.getElementById("msg");
+// const title = document.getElementById("title");
 let boxes = [...document.querySelectorAll(".box")];
 const reset = document.getElementById("reset");
 const newGameBtn = document.getElementById("new-btn");
-
+const title = document.getElementById("title");
 const winConditions = [
   [0, 1, 2],
   [3, 4, 5],
@@ -17,7 +17,6 @@ const winConditions = [
 let turnX = true; // true = Player X, false = Player O
 let gameActive = true; // to stop clicks after win/draw
 
-
 // Main click handler for each box
 boxes.forEach((box, index) => {
   box.addEventListener("click", () => {
@@ -29,7 +28,7 @@ boxes.forEach((box, index) => {
       // box.style.color = "gray";
       box.style.backgroundColor = "gray";
     } else {
-      box.textContent = "o";
+      box.textContent = "O";
       box.style.backgroundColor = "white";
     }
 
@@ -54,13 +53,13 @@ function checkWinner() {
 
     if (val1 === val2 && val2 === val3) {
       winnerFound = true;
-      msg.textContent = `Player ${val1} Wins!`;
-      msg.style.color = val1 === "X" ? "red" : "blue";
+      title.textContent = `Player ${val1} Wins!`;
+      title.style.color = val1 === "X" ? "29531bff" : "0affc6ff";
 
       // Highlight winning line
-      boxes[a].style.backgroundColor = "#a1bc98";
-      boxes[b].style.backgroundColor = "#a1bc98";
-      boxes[c].style.backgroundColor = "#a1bc98";
+      boxes[a].style.backgroundColor = "#29531bff";
+      boxes[b].style.backgroundColor = "#29531bff";
+      boxes[c].style.backgroundColor = "#29531bff";
 
       gameActive = false;
       enableNewGameButton();
@@ -71,8 +70,8 @@ function checkWinner() {
   // Check for draw
   const isDraw = boxes.every((box) => box.textContent !== "");
   if (isDraw && !winnerFound) {
-    msg.textContent = "It's a Draw!";
-    msg.style.color = "orange";
+    title.textContent = "It's a Draw!";
+    title.style.color = "white";
     gameActive = false;
     enableNewGameButton();
   }
@@ -85,7 +84,8 @@ newGameBtn.addEventListener("click", resetGame);
 function resetGame() {
   turnX = true;
   gameActive = true;
-  msg.textContent = "";
+  title.textContent = "Tic Tac Toe";
+  title.style.color = "white";
 
   boxes.forEach((box) => {
     box.textContent = "";
